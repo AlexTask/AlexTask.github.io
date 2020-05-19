@@ -20,7 +20,6 @@ function hammingEncode(input) {
     }
 
     debug && console.log('Input value: ' + output);
-
     debug && console.log('controlBitsIndexes: ' + controlBitsIndexes);
 
     //Insert control bits to code. (Empty values)
@@ -156,29 +155,22 @@ function hammingCheck(input) {
 }
 
 
-//Test code
-var initVal = '0100010000111101';
-console.log('init ', initVal, ', encoded: ', hammingEncode(initVal));
-
-var arr = ['100110010100001011101', '101110000100001011101', '110110000100001011101', '100110000100001011101'];
-
-arr.forEach(function (el) {
-    console.log("Input: " + el + ", Decoded: ", hammingDecode(el) + ', Pure decode: ' + hammingPureDecode(el) + ', correct result: ' + (initVal == hammingDecode(el)) + ', Has error: ' + hammingCheck(el));
-});
-// Test code
-
+//------------------UI----------------------
 
 $(".js-encode-btn").on("click", function () {
-    //console.log($('.js-input-code').val());
     hammingEncode($('.js-input-code').val());
     $('.js-encoded-code').val(hammingEncode($('.js-input-code').val()));
 });
 
-
 $(".js-decode-btn").on("click", function () {
     var code = $('.js-encoded-code').val();
-    //console.log('Encoded code: ' + code);
+
     $('.js-has-error').text(hammingCheck(code) ? 'Так' : 'Ні');
     $('.js-result-code').val(hammingDecode(code));
     $('.js-result-noncorrect-code').val(hammingPureDecode(code));
 });
+
+$('.js-encoded-code').val('');
+$('.js-has-error').text('');
+$('.js-result-code').val('');
+$('.js-result-noncorrect-code').val('');

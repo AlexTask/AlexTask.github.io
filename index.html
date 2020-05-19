@@ -1,44 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Коди Хеммінга та Гаффмана</title>
     <script type="application/javascript" src="./jquery.min.js"></script>
-    
-  </head>
-  <body>
-    <h1>
-        Код Хеммінга
-    </h1>
-    <p>Введіть строку в двоїчній системі:</p>
-    <textarea class="js-input-code">101010101010101010</textarea>
+    <style>
+        textarea {
+            width: 300px;
+            height: 100px;
+        }
 
-    <p>
-      <button class="js-encode-btn">Кодувати</button>
-    </p>
+        td {
+            height: 1000px;
+            vertical-align: top;
+            padding: 40px;
+        }
 
-    <p class="js-encode-err"></p>
+        body {
+            margin: auto;
+        }
+    </style>
 
-    <p>Закодована строка:</p>
-    <textarea class="js-encoded-code"></textarea>
+</head>
 
-    <p>
-      <button class="js-decode-btn">Декодувати</button>
-    </p>
+<body>
+    <div style="margin-left: 40px;">
+        <h2>Роботу виконав Тищенко О.О.</h2>
+        <p><a href="https://github.com/AlexTask/AlexTask.github.io">Cирцевий код тут</a></p>
+    </div>
+    <table>
+        <tr>
+            <td>
+                <h2>
+                    Код Хеммінга
+                </h2>
+                <p>Введіть строку в двоїчній системі:</p>
+                <textarea class="js-input-code">101010101010101010</textarea>
 
-    <p>Строка має помилки: <span class="js-has-error"></span></p>
+                <p>
+                    <button class="js-encode-btn">Кодувати</button>
+                </p>
 
-    <p>Декодована строка:</p>
-    <textarea class="js-result-code"></textarea>
+                <p class="js-encode-err"></p>
 
-    <p>Декодована строка без коррекціі помилок:</p>
-    <textarea class="js-result-noncorrect-code"></textarea>
+                <p>Закодована строка:</p>
+                <textarea class="js-encoded-code"></textarea>
 
+                <p>
+                    <button class="js-decode-btn">Декодувати</button>
+                </p>
 
-    <script type="application/javascript" src="./scripts.js"></script>
+                <p>Строка має помилки: <span class="js-has-error"></span></p>
 
-    <p>Роботу виконав Тищенко О.О.</p>
-  </body>
+                <p>Декодована строка:</p>
+                <textarea class="js-result-code"></textarea>
+
+                <p>Декодована строка без коррекціі помилок:</p>
+                <textarea class="js-result-noncorrect-code"></textarea>
+            </td>
+            <td class="right">
+                <h2>
+                    Код Гаффмана
+                </h2>
+                <p>Введіть строку:</p>
+                <textarea class="js-input-str-huf">Ця тестова строка може бути закодована</textarea>
+
+                <p>
+                    <button class="js-encode-huf-btn">Кодувати</button>
+                </p>
+
+                <p>Таблиця кодів:</p>
+                <textarea class="js-codes-huf"></textarea>
+
+                <p>Закодована строка:</p>
+                <textarea class="js-encoded-str-huf"></textarea>
+
+                <p>
+                    <button class="js-decode-huf-btn">Декодувати</button>
+                </p>
+
+                <p>Декодована строка:</p>
+                <textarea class="js-result-str-huf"></textarea>
+
+            </td>
+        </tr>
+    </table>
+    <script type="application/javascript" src="./hamming.js"></script>
+    <script type="application/javascript" src="./huffman.js"></script>
+
+</body>
+
 </html>
