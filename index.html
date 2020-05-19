@@ -1,1 +1,44 @@
-"Hello World" 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Коди Хеммінга та Гаффмана</title>
+    <script type="application/javascript" src="./jquery.min.js"></script>
+    
+  </head>
+  <body>
+    <h1>
+        Код Хеммінга
+    </h1>
+    <p>Введіть строку в двоїчній системі:</p>
+    <textarea class="js-input-code">101010101010101010</textarea>
+
+    <p>
+      <button class="js-encode-btn">Кодувати</button>
+    </p>
+
+    <p class="js-encode-err"></p>
+
+    <p>Закодована строка:</p>
+    <textarea class="js-encoded-code"></textarea>
+
+    <p>
+      <button class="js-decode-btn">Декодувати</button>
+    </p>
+
+    <p>Строка має помилки: <span class="js-has-error"></span></p>
+
+    <p>Декодована строка:</p>
+    <textarea class="js-result-code"></textarea>
+
+    <p>Декодована строка без коррекціі помилок:</p>
+    <textarea class="js-result-noncorrect-code"></textarea>
+
+
+    <script type="application/javascript" src="./scripts.js"></script>
+
+    <p>Роботу виконав Тищенко О.О.</p>
+  </body>
+</html>
