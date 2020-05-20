@@ -1,0 +1,54 @@
+<html>
+
+<head>
+  <script type="text/javascript" src="jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="tmpl.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <style>
+    body,
+    .space {
+      background-color: #000000;
+    }
+
+    .star {
+      position: fixed;
+    }
+
+    .info {
+      color: #fff;
+      position: fixed;
+      top: 0;
+      line-height: 4px;
+      background-color: rgba(0, 0, 0, 0.81);
+      padding: 5px;
+    }
+
+    .info2 {
+      right: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="space js_space">
+    <script type="text/html" id="stars_tmpl">
+      <% for (var i in starsArr) { %>
+      <div class="star" style="<%=starsArr[i].style%>"></div>
+      <% } %>
+    </script>
+  </div>
+  <div class="info">
+    <p>Зірок в системі: <span class="js-stars-count"></span></p>
+    <p>Мін. кількість: <span class="js-minStarsCount"></span></p>
+    <p>Макс. кількість: <span class="js-maxStarsCount"></span></p>
+    <p>Мін. розмір: <span class="js-minStarSize"></span></p>
+    <p>Макс. розмір: <span class="js-maxStarSize"></span></p>
+  </div>
+
+  <div class="info info2">
+    <p>Роботу виконав Тищенко О.О., 4 курс, КН, заочн</p>
+    <p><a href="https://github.com/AlexTask/AlexTask.github.io/tree/master/stars" target="_blank">Cирцевий код тут</a></p>
+  </div>
+</body>
+
+</html>
