@@ -1,5 +1,7 @@
-var minStarsCount = 500,
-  maxStarsCount = 3000,
+
+
+var minStarsCount = 200,
+  maxStarsCount = 1000,
   randomAccuracy = 10000,
   minStarSize = 2,
   maxStarSize = 50,
@@ -7,11 +9,16 @@ var minStarsCount = 500,
   documentHeight = 300,
   starsArr = [],
   minDist = 2,
-  generateCount = 100;
+  generateCount = 100,
+  maxRemove = 4,
+  maxAdd = 4,
+  updateTime = 200;
 
 //Random int Geterator
 function getRandomInt(minValue, maxValue) {
   if (minValue >= maxValue) {
+    console.log(minValue, maxValue, minValue >= maxValue);
+    debugger;
     return NaN;
   }
 
@@ -117,15 +124,50 @@ function getStarStyle(star) {
   return 'top:' + star.top + 'px;left:' + star.left + 'px;width:' + star.size + 'px;height:' + star.size + 'px;border-radius:' + (star.size / 2) + 'px;background-color:#' + star.color + ';';
 }
 
+function removeStar(i) {
+  starsArr.splice(i, 1);
+}
+
 function init() {
   generateCount = getRandomInt(minStarsCount, maxStarsCount);
-  console.log('Stars count: ', generateCount);
 
   starsArr = generateMap(generateCount);
 
   showMap();
 }
 
+function initActions() {
+  setInterval(function() {
+    for(let i=0;i < getRandomInt(0, maxRemove);i++) {
+      if (starsArr.length > minStarsCount) {
+        removeStar(getRandomInt(0, starsArr.length-1));
+      }
+    }
+
+    let addCount = getRandomInt(0, maxAdd);
+    let added = 0;
+    let iter = 1000;
+    while(added < addCount) {
+      if (starsArr.length >= maxStarsCount) {
+        break;
+      }
+
+      var star = generateStar();
+
+      if (checkNewStar(starsArr, star)) {
+        starsArr.push(star);
+        added++;
+      }
+      iter--;
+      if (iter < 0) {
+        break;
+      }
+    }
+
+    $('.js-stars-count').text(starsArr.length);
+    showMap();
+  }, updateTime);
+}
 
 //-----------------UI-------------------
 
@@ -137,11 +179,26 @@ $(document).ready(function () {
   documentWidth = $(document).width();
   documentHeight = $(document).width();
 
+  minStarsCount = getRandomInt(100, 500);
+  maxStarsCount = getRandomInt(1000, 5000);
+  minStarSize = getRandomInt(2, 5);
+  maxStarSize = getRandomInt(20, 70);
+  maxRemove = getRandomInt(2, 15);
+  maxAdd = getRandomInt(2, 15);
+  updateTime = getRandomInt(100, 1000);
+
   init();
+
+  console.log(minStarsCount);
 
   $('.js-stars-count').text(generateCount);
   $('.js-minStarsCount').text(minStarsCount);
   $('.js-maxStarsCount').text(maxStarsCount);
   $('.js-minStarSize').text(minStarSize);
   $('.js-maxStarSize').text(maxStarSize);
+  $('.js-time').text(updateTime);
+  $('.js-maxRemove').text(maxRemove);
+  $('.js-maxAdd').text(maxAdd);
+
+  initActions();
 });
