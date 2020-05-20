@@ -6,6 +6,7 @@ var minStarsCount = 500,
   documentWidth = 300,
   documentHeight = 300,
   starsArr = [],
+  minDist = 2,
   generateCount = 100;
 
 //Random int Geterator
@@ -59,7 +60,7 @@ function generateStar() {
 }
 
 function isCollided(circle0, circle1) {
-  var minDistance = circle0.radius + circle1.radius;
+  var minDistance = circle0.radius + circle1.radius + minDist;
 
   var dx = circle0.x - circle1.x;
   var dy = circle0.y - circle1.y;
