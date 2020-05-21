@@ -1,4 +1,5 @@
-function hammingEncode(input) {
+(function() {
+    function hammingEncode(input) {
     var debug = false;
     $('.js-encode-err').text('');
     if (typeof input !== "string" || input.match(/[^10]/)) {
@@ -408,3 +409,5 @@ $('.js-encoded-code').val('');
 $('.js-has-error').text('');
 $('.js-result-code').val('');
 $('.js-result-noncorrect-code').val('');
+
+})();

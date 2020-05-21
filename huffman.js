@@ -1,18 +1,17 @@
-
+(function() {
 String.prototype.replaceAll = function(search, replace) {
     return this.split(search).join(replace);
 }
+
+const topairs = freqs =>
+  Object.keys(freqs).map(c => [c, freqs[c]]);
+
 
 //Frequency table
 function freq (text) {
     return text.split('').reduce((fs, c) =>
             fs[c] ? (fs[c] = fs[c] + 1, fs)
                 : (fs[c] = 1, fs), {});
-}
-
-//Conert to array
-function toPairs(frs) {
-    return Object.keys(frs).map(c => [c, freq[c]]);
 }
 
 //Sort pairs
@@ -38,7 +37,7 @@ function treeToCodes (tree, pfx) {
 
 //Get codes table
 function getCodesTable(text) {
-    return treeToCodes(makeTree(sortPairs(toPairs(freq(text)))));
+    return treeToCodes(makeTree(sortPairs(topairs(freq(text)))));
 }
 
 // Encode string by codes
@@ -93,3 +92,4 @@ $(".js-decode-huf-btn").on("click", function () {
 $('.js-encoded-str-huf').val('');
 $('.js-codes-huf').val('');
 $('.js-result-str-huf').val('');
+})();
