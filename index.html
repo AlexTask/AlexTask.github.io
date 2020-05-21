@@ -22,19 +22,61 @@
         body {
             margin: auto;
         }
+
+        .control-bit {
+            color: red;
+        }
+
+        .enc-table tr {
+            height: 10px;
+        }
+
+        .enc-table td {
+            height: 20px;
+            width: 15px;
+            padding: 0;
+            border: 1px solid;
+            text-align: center;
+            border-color: black;
+            padding: 0 4px 0 4px;
+        }
+
+        .enc-table th {
+            width: 15px;
+            padding: 0;
+            border: 1px solid;
+            text-align: center;
+            border-color: black;
+            background-color: #f7f7f7;
+        }
+
+        .add-info {
+            background-color: #f7f7f7;
+        }
+
+        .control-bit.check-bit {
+            background-color: #68ff71;
+        }
+        .res-bit.check-bit {
+            background-color: #68ff71;
+        }
+
+        .block {
+            margin: auto 10% 50px 10%;
+            border-bottom: 2px black solid;
+            padding-bottom: 50px;
+        }
     </style>
 
 </head>
 
 <body>
-    <div style="margin-left: 40px;">
+    <div class="block">
         <h2>Теорія інформації і кодування</h2>
         <h2>Тищенко О.О. 4 курс, КН, заочн</h2>
         <p><a href="https://github.com/AlexTask/AlexTask.github.io">Cирцевий код тут</a></p>
     </div>
-    <table>
-        <tr>
-            <td>
+    <div class="block">
                 <h2>
                     Код Хеммінга
                 </h2>
@@ -44,25 +86,42 @@
                 <p>
                     <button class="js-encode-btn">Кодувати</button>
                 </p>
-
                 <p class="js-encode-err"></p>
+
+                <p>Довжина послідовності: <span class="js-str-l"></span>, контрольні біти потрібно додати на позиціі:</p>
+                <p><span class="js-control-bits-nums"></span></p>
+                
+                <p>Рахуємо контрольні біти</p>
+                <p class="js-encode-process"></p>
+                <p>Нова послідовність: <span class="js-control-bits"></span></p>
 
                 <p>Закодована строка:</p>
                 <textarea class="js-encoded-code"></textarea>
 
-                <p>
-                    <button class="js-decode-btn">Декодувати</button>
-                </p>
+                <p><button class="js-decode-btn">Декодувати</button></p>
 
-                <p>Строка має помилки: <span class="js-has-error"></span></p>
+                <p>Перевіряємо наявність помилок, рахуємо контрольні біти і звіряємо з вхідними даними</p>
+
+                <p class="js-check-process"></p>
+
+                <p>Послідовність має помилки: <span class="js-has-error"></span></p>
+
+                <p class="js-no-errors">Послідовність така сама, відаляємо контрольні біти на виводимо послідовність.</p>
+
+                <p class="js-has-errors">Послідовності не співпадають: сумуємо позиціі неспівпадаючих контрольних бітів. Це буде номер помилкового біту. Міняємо його на протилежний.</p>
+                <p class="js-has-errors js-calc-bits"></p>
+
+                <p class="js-has-errors js-sum-control-bits"></p>
+
+                <p class="js-has-errors js-bits-decode-res"></p>
 
                 <p>Декодована строка:</p>
                 <textarea class="js-result-code"></textarea>
 
-                <p>Декодована строка без коррекціі помилок:</p>
-                <textarea class="js-result-noncorrect-code"></textarea>
-            </td>
-            <td class="right">
+                <!-- <p>Декодована строка без коррекціі помилок:</p>
+                <textarea class="js-result-noncorrect-code"></textarea> -->
+                </div>
+            <div class="block right">
                 <h2>
                     Код Гаффмана
                 </h2>
@@ -86,9 +145,7 @@
                 <p>Декодована строка:</p>
                 <textarea class="js-result-str-huf"></textarea>
 
-            </td>
-        </tr>
-    </table>
+            </div>
     <script type="application/javascript" src="./hamming.js"></script>
     <script type="application/javascript" src="./huffman.js"></script>
 
