@@ -68,7 +68,42 @@ function decode (hufCodes, str) {
 }
 
 
+function showCodes(text) {
+    
+    var table = '<table cellspacing="0" class="enc-table"><tr>';
 
+    var codes = sortPairs(topairs(freq(text)));
+
+    Object.keys(codes).forEach(key => {
+        table += '<tr>';
+        table += '<td>' + codes[key][0] + '</td>';
+        table += '<td>' + codes[key][1] + '</td>';
+        table += '</tr>';
+    });
+
+    table += '</tr></table>';
+
+    $('.js-freq-table').html(table);
+
+
+
+
+    var table = '<table cellspacing="0" class="enc-table"><tr>';
+
+    var codes = getCodesTable(text);
+
+    Object.keys(codes).forEach(key => {
+        table += '<tr>';
+        table += '<td>' + key + '</td>';
+        table += '<td>' + codes[key] + '</td>';
+        table += '</tr>';
+    });
+
+    table += '</tr></table>';
+
+    $('.js-codes-table').html(table);
+    
+}
 
 
 
@@ -80,6 +115,8 @@ $(".js-encode-huf-btn").on("click", function () {
 
     $('.js-codes-huf').val(JSON.stringify(getCodesTable(inputStr)));
     $('.js-encoded-str-huf').val(encode(getCodesTable(inputStr), inputStr));
+
+    showCodes(inputStr);
 });
 
 $(".js-decode-huf-btn").on("click", function () {
