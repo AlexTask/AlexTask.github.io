@@ -2,7 +2,7 @@
 %що серед елементів списку L зустрічаються списки.
 
 is_list(X) :- var(X).
-	is_list([_|Xs]) :- is_list(Xs).
+	is_list([_|H]) :- is_list(H).
 	is_list([]).
 
 notContainsListItem([ ]):- !.
