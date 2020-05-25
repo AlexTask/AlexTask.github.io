@@ -61,8 +61,8 @@ let progress = [
     success: ['Так',"Да","подобається"],
     fail: ['ні'],
     textfunc: () => getText('final').replace('{0}', name),
-    successcb: () => {sendToHuman(getText('final_ok', name)); sendToHuman(getText('end'));},
-    failcb: () => {sendToHuman(getText('final_fail', name));  sendToHuman(getText('end'));},
+    successcb: () => {sendToHuman(getText('final_ok', name)); sendToHuman(getText('end')); progress[getStepByID('final')].passed = true},
+    failcb: () => {sendToHuman(getText('final_fail', name));  sendToHuman(getText('end')); progress[getStepByID('final')].passed = true},
     nullcb: () => {sendToHuman(getText('final_null', name));  sendToHuman(getText('end')); progress[getStepByID('final')].passed = true}
 }
 ]; 
