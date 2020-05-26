@@ -9,4 +9,4 @@
 Після виконання підпроцес повертає дані до основної програми.
 Програма підраховує отримані результати и по закінченню роботи виводить результат.
 
-Результат роботи програми [тут]https://github.com/AlexTask/AlexTask.github.io/blob/master/distributed_system/result.txt)
+Результат роботи програми [тут](https://github.com/AlexTask/AlexTask.github.io/blob/master/distributed_system/result.txt)
