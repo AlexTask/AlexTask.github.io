@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Принтери</title>
+    <script type="application/javascript" src="./jquery.min.js"></script>
+    <style>
+        textarea {
+            width: 300px;
+            height: 100px;
+        }
+
+        td {
+            height: 1000px;
+            vertical-align: top;
+            padding: 40px;
+        }
+
+        body {
+            margin: auto;
+        }
+
+        .control-bit {
+            color: red;
+        }
+
+        .enc-table tr {
+            height: 10px;
+        }
+
+        .enc-table td {
+            height: 20px;
+            width: 15px;
+            padding: 0;
+            border: 1px solid;
+            text-align: center;
+            border-color: black;
+            padding: 0 4px 0 4px;
+        }
+
+        .enc-table th {
+            width: 15px;
+            padding: 0;
+            border: 1px solid;
+            text-align: center;
+            border-color: black;
+            background-color: #f7f7f7;
+        }
+
+        .add-info {
+            background-color: #f7f7f7;
+        }
+
+        .control-bit.check-bit {
+            background-color: #68ff71;
+        }
+        .res-bit.check-bit {
+            background-color: #68ff71;
+        }
+
+        .block {
+            margin: auto 10% 50px 10%;
+            border-bottom: 2px black solid;
+            padding-bottom: 50px;
+        }
+
+        .js-requests {
+            min-height: 500px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="block">
+        <h2>Технології розподілених систем та паралельних обчислень</h2>
+        <h2>Тищенко О.О. 4 курс, КН, заочна форма</h2>
+        <p><a href="https://github.com/AlexTask/AlexTask.github.io/tree/master/distributed_system2">Cирцевий код тут</a></p>
+    </div>
+    <div class="block">
+        <h2>Лабораторна робота 5, Принтери</h2>
+        
+        <p>Принтер 1: <span class="js-print-status-1">Вільний</span></p>
+        <p>Принтер 2: <span class="js-print-status-2">Вільний</span></p>
+
+        <p>Користувач 1 <button class="js-request-print" data-id="1">Запросити принтер</button><button class="js-rerease-print" data-id="1">Звільнити принтер</button></p>
+        <p>Користувач 2 <button class="js-request-print" data-id="2">Запросити принтер</button><button class="js-rerease-print" data-id="2">Звільнити принтер</button></p>
+        <p>Користувач 3 <button class="js-request-print" data-id="3">Запросити принтер</button><button class="js-rerease-print" data-id="3">Звільнити принтер</button></p>
+        <p>Користувач 4 <button class="js-request-print" data-id="4">Запросити принтер</button><button class="js-rerease-print" data-id="4">Звільнити принтер</button></p>
+        <p>Користувач 5 <button class="js-request-print" data-id="5">Запросити принтер</button><button class="js-rerease-print" data-id="5">Звільнити принтер</button></p>
+        <p>Користувач 6 <button class="js-request-print" data-id="6">Запросити принтер</button><button class="js-rerease-print" data-id="6">Звільнити принтер</button></p>
+        <br/>
+        <p>Запити на використання принтеру:</p>
+        <div class="js-requests"></div>
+    </div>
+    <script type="application/javascript" src="./scripts.js"></script>
+
+</body>
+
+</html>
