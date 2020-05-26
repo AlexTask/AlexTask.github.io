@@ -1,0 +1,256 @@
+Program started with:
+Array 1 length: 20000
+Array 2 length: 450
+
+
+Child process 0 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 1 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 2 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 3 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 4 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 5 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 6 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 7 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 8 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 9 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 10 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 11 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 12 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 13 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 14 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 15 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 16 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 17 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 18 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 19 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 20 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 21 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 22 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 23 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 24 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 25 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 26 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 27 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 28 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 29 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 30 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 31 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 32 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 33 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 34 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 35 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 36 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 37 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 38 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 39 started with:
+Array 1 length: 488
+Array 2 length: 450
+
+Child process 40 started with:
+Array 1 length: 480
+Array 2 length: 450
+
+Child 2 sent calculation result: 273
+Child 1 sent calculation result: 254
+Child 4 sent calculation result: 238
+Child 0 sent calculation result: 244
+Child 3 sent calculation result: 247
+Child 7 sent calculation result: 258
+Child process finished successfully
+Child process finished successfully
+Child 8 sent calculation result: 244
+Child 5 sent calculation result: 246
+Child process finished successfully
+Child process finished successfully
+Child process finished successfully
+Child process finished successfully
+Child 13 sent calculation result: 246
+Child 10 sent calculation result: 236
+Child 12 sent calculation result: 232
+Child 6 sent calculation result: 244
+Child 22 sent calculation result: 244
+Child 11 sent calculation result: 224
+Child 15 sent calculation result: 247
+Child 20 sent calculation result: 264
+Child 14 sent calculation result: 265
+Finished 6 child processes from 41
+Child 9 sent calculation result: 264
+Child 26 sent calculation result: 245
+Child process finished successfully
+Child process finished successfully
+Child 16 sent calculation result: 230
+Child 25 sent calculation result: 250
+Child 23 sent calculation result: 254
+Child 34 sent calculation result: 251
+Child 35 sent calculation result: 262
+Child 27 sent calculation result: 235
+Child 17 sent calculation result: 243
+Child process finished successfully
+Child process finished successfully
+Child 24 sent calculation result: 237
+Child 18 sent calculation result: 238
+Child process finished successfully
+Child process finished successfully
+Child process finished successfully
+Child 21 sent calculation result: 231
+Child 19 sent calculation result: 249
+Child 28 sent calculation result: 240
+Child process finished successfully
+Child process finished successfully
+Child process finished successfully
+Child process finished successfully
+Child 36 sent calculation result: 246
+Child 30 sent calculation result: 239
+Child process finished successfully
+Child process finished successfully
+Child process finished successfully
+Child process finished successfully
+Child process finished successfully
+Child 29 sent calculation result: 248
+Child 40 sent calculation result: 226
+Child process finished successfully
+Child 33 sent calculation result: 243
+Child process finished successfully
+Child process finished successfully
+Child process finished successfully
+Child 39 sent calculation result: 266
+Child process finished successfully
+Child process finished successfully
+Child process finished successfully
+Child 38 sent calculation result: 238
+Child process finished successfully
+Child process finished successfully
+Child process finished successfully
+Child process finished successfully
+Child process finished successfully
+Child process finished successfully
+Child 31 sent calculation result: 236
+Child 32 sent calculation result: 251
+Child process finished successfully
+Child process finished successfully
+Child process finished successfully
+Child 37 sent calculation result: 258
+Child process finished successfully
+Child process finished successfully
+Finished 40 child processes from 41
+Child process finished successfully
+
+
+Calculation result: 10086
