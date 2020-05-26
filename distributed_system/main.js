@@ -1,5 +1,5 @@
 const { spawn } = require('child_process');
-const arr1Length = 20000;
+const arr1Length = 200000;
 const maxArrayForChild = 500;
 
 // Рахуємо кількість потоків
