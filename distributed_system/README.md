@@ -10,3 +10,7 @@
 Програма підраховує отримані результати и по закінченню роботи виводить результат.
 
 Результат роботи програми [тут](https://github.com/AlexTask/AlexTask.github.io/blob/master/distributed_system/result.txt)
+
+Програма пріцює на node.js тому для запуску потрібно виконати такі команди:
+npm install
+node main.js
