@@ -1,165 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Коди Хеммінга та Гаффмана</title>
-    <script type="application/javascript" src="./jquery.min.js"></script>
-    <style>
-        textarea {
-            width: 300px;
-            height: 100px;
-        }
+  <script type="text/javascript" src="jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="tmpl.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <style>
+    body,
+    .space {
+      background-color: #000000;
+    }
 
-        td {
-            height: 1000px;
-            vertical-align: top;
-            padding: 40px;
-        }
+    .star {
+      position: fixed;
+    }
 
-        body {
-            margin: auto;
-        }
+    .info {
+      color: #fff;
+      position: fixed;
+      top: 0;
+      line-height: 4px;
+      background-color: rgba(0, 0, 0, 0.81);
+      padding: 5px;
+    }
 
-        .control-bit {
-            color: red;
-        }
-
-        .enc-table tr {
-            height: 10px;
-        }
-
-        .enc-table td {
-            height: 20px;
-            width: 15px;
-            padding: 0;
-            border: 1px solid;
-            text-align: center;
-            border-color: black;
-            padding: 0 4px 0 4px;
-        }
-
-        .enc-table th {
-            width: 15px;
-            padding: 0;
-            border: 1px solid;
-            text-align: center;
-            border-color: black;
-            background-color: #f7f7f7;
-        }
-
-        .add-info {
-            background-color: #f7f7f7;
-        }
-
-        .control-bit.check-bit {
-            background-color: #68ff71;
-        }
-        .res-bit.check-bit {
-            background-color: #68ff71;
-        }
-
-        .block {
-            margin: auto 10% 50px 10%;
-            border-bottom: 2px black solid;
-            padding-bottom: 50px;
-        }
-    </style>
-
+    .info2 {
+      right: 5px;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="block">
-        <h2>Теорія інформації і кодування</h2>
-        <h2>Тищенко О.О. 4 курс, КН, заочн</h2>
-        <p><a href="https://github.com/AlexTask/AlexTask.github.io">Cирцевий код тут</a></p>
-    </div>
-    <div class="block">
-                <h2>
-                    Код Хеммінга
-                </h2>
-                <p>Введіть строку в двоїчній системі: (Після вводу натисніть "Кодувати")</p>
-                <textarea class="js-input-code">10101010</textarea>
-
-                <p>
-                    <button class="js-encode-btn">Кодувати</button>
-                </p>
-                <p class="js-encode-err"></p>
-
-                <p>Довжина послідовності: <span class="js-str-l"></span>, контрольні біти потрібно додати на позиціі:</p>
-                <p><span class="js-control-bits-nums"></span></p>
-                
-                <p>Рахуємо контрольні біти</p>
-                <p class="js-encode-process"></p>
-                <p>Нова послідовність: <span class="js-control-bits"></span></p>
-
-                <p>Закодована строка: (Її потрібно змінити щоб перевірити віправлення помилок)</p>
-                <textarea class="js-encoded-code"></textarea>
-
-                <p><button class="js-decode-btn">Декодувати</button></p>
-
-                <p>Перевіряємо наявність помилок, рахуємо контрольні біти і звіряємо з вхідними даними</p>
-
-                <p class="js-check-process"></p>
-
-                <p>Послідовність має помилки: <span class="js-has-error"></span></p>
-
-                <p class="js-no-errors">Послідовність така сама, відаляємо контрольні біти на виводимо послідовність.</p>
-
-                <p class="js-has-errors">Послідовності не співпадають: сумуємо позиціі неспівпадаючих контрольних бітів. Це буде номер помилкового біту. Міняємо його на протилежний.</p>
-                <p class="js-has-errors js-calc-bits"></p>
-
-                <p class="js-has-errors js-sum-control-bits"></p>
-
-                <p class="js-has-errors js-bits-decode-res"></p>
-
-                <p>Декодована строка:</p>
-                <textarea class="js-result-code"></textarea>
-
-                <!-- <p>Декодована строка без коррекціі помилок:</p>
-                <textarea class="js-result-noncorrect-code"></textarea> -->
-                </div>
-            <div class="block right">
-                <h2>
-                    Код Гаффмана
-                </h2>
-                <p>Введіть строку:</p>
-                <textarea class="js-input-str-huf">Ця тестова строка може бути закодована</textarea>
-
-                <p>
-                    <button class="js-encode-huf-btn">Кодувати</button>
-                </p>
-
-                <p>Для кодування, рахуємо частоту символів, сортуємо по частоті, строїмо бінарне дерево, після цього з дерева можно отримати коди символів.</p>
-                <p>Наступним шагом, формуємо таблицю кодів.</p>
-
-                <p>Частота символів:</p>
-                <p class="js-freq-table"></p>
-                
-                <p>Таблиця кодів:</p>
-                <p class="js-codes-table"></p>
-                <textarea class="js-codes-huf"></textarea>
-
-                <p>Далі заміняємо символи на коди</p>
-
-                <p>Закодована строка:</p>
-                <textarea class="js-encoded-str-huf"></textarea>
-
-                <p>Для декодування заміняємо коди на символи</p>
-
-                <p>
-                    <button class="js-decode-huf-btn">Декодувати</button>
-                </p>
-
-                <p>Декодована строка:</p>
-                <textarea class="js-result-str-huf"></textarea>
-
-            </div>
-    <script type="application/javascript" src="./hamming.js"></script>
-    <script type="application/javascript" src="./huffman.js"></script>
-
+  <div class="space js_space">
+    <script type="text/html" id="stars_tmpl">
+      <% for (var i in starsArr) { %>
+      <div class="star" style="<%=starsArr[i].style%>"></div>
+      <% } %>
+    </script>
+  </div>
+  <div class="info">
+    <p>Зірок в системі: <span class="js-stars-count"></span></p>
+    <p>Мін. кількість: <span class="js-minStarsCount"></span></p>
+    <p>Макс. кількість: <span class="js-maxStarsCount"></span></p>
+    <p>Мін. розмір: <span class="js-minStarSize"></span></p>
+    <p>Макс. розмір: <span class="js-maxStarSize"></span></p>
+    <p>Час ітерації: <span class="js-time"></span>мс</p>
+    <p>Видалення за ітерацію: 0 - <span class="js-maxRemove"></span></p>
+    <p>Додавання за ітерацію: 0 - <span class="js-maxAdd"></span></p>
+  </div>
 </body>
 
 </html>
